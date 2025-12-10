@@ -1,161 +1,91 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>For My Munchkin — I Miss You</title>
-  <style>
-    /* --- Simple reset & font --- */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-    *{box-sizing:border-box}
-    body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; margin:0; background:
-      radial-gradient(900px 400px at 10% 10%, rgba(255,107,136,0.06), transparent),
-      linear-gradient(180deg,#1b0b11,#2f1220); color:#fff; padding:28px;}
-    h1,h2{margin:0 0 10px 0}
-    p{margin:0 0 12px 0; color:rgba(255,255,255,0.92)}
-
-    /* --- layout --- */
-    .container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:360px 1fr;gap:28px}
-    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:16px;padding:18px;border:1px solid rgba(255,255,255,0.04)}
-    @media(max-width:900px){.container{grid-template-columns:1fr}}
-
-    /* --- Timer left column --- */
-    .hero h1{font-size:26px;color:#ffeef3}
-    .subtitle{color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px}
-    .timer-wrap{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-    .circle{width:96px;height:96px;border-radius:50%;display:flex;flex-direction:column;align-items:center;
-      justify-content:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.03)}
-    .circle .num{font-weight:700;font-size:22px;color:#ffd1e4}
-    .circle .lbl{font-size:11px;color:rgba(255,255,255,0.65);margin-top:6px}
-
-    /* photos */
-    .photos{margin-top:14px}
-    .photo-row{display:flex;gap:10px;flex-wrap:wrap}
-    .photo-row img{width:78px;height:78px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,0.06)}
-
-    /* right column */
-    .letter h2{color:#fff;font-size:20px}
-    .card-text{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.004));
-      padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);color:rgba(255,255,255,0.94);line-height:1.6}
-
-    /* footer & snap */
-    .footer{margin-top:18px;text-align:center;color:rgba(255,255,255,0.75);font-size:14px}
-    .snap-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,#b36bff,#ff6bba);
-      color:white;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700;margin-top:12px}
-    .snap-btn img{width:20px;height:20px}
-
-    /* tiny sparkle */
-    .spark{display:inline-block;font-size:14px;margin-left:6px;opacity:0.95}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Munchkin — I Miss You</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="container" role="main">
-    <!-- LEFT -->
-    <section class="panel">
-      <div class="hero">
-        <h1>For My Munchkin</h1>
-        <div class="subtitle">This is how long I've missed you since the last time we met.</div>
+<div class="hearts"></div>
 
-        <div class="timer-wrap" aria-live="polite" aria-atomic="true">
-          <div class="circle"><div class="num" id="days">0</div><div class="lbl">Days</div></div>
-          <div class="circle"><div class="num" id="hours">00</div><div class="lbl">Hours</div></div>
-          <div class="circle"><div class="num" id="minutes">00</div><div class="lbl">Minutes</div></div>
-          <div class="circle"><div class="num" id="seconds">00</div><div class="lbl">Seconds</div></div>
-        </div>
+<header class="hero">
+    <h1>For My Munchkin</h1>
+    <p class="subtitle">This is how long I've missed you since the last time we met.</p>
+</header>
 
-        <div class="photos">
-          <h3 style="margin-top:12px;font-size:14px">Our Cherishable Moments</h3>
-          <div class="photo-row" id="photos">
-            <!-- Add your image files in the repo and update src if you want -->
-            <img src="images/photo1.jpg" alt="photo1" onerror="this.style.display='none'">
-            <img src="images/photo2.jpg" alt="photo2" onerror="this.style.display='none'">
-            <img src="images/photo3.jpg" alt="photo3" onerror="this.style.display='none'">
-          </div>
-        </div>
-      </div>
+<section class="timer-section">
+    <div class="time-circle">
+        <span id="days">0</span>
+        <label>Days</label>
+    </div>
+    <div class="time-circle">
+        <span id="hours">00</span>
+        <label>Hours</label>
+    </div>
+    <div class="time-circle">
+        <span id="minutes">00</span>
+        <label>Minutes</label>
+    </div>
+    <div class="time-circle">
+        <span id="seconds">00</span>
+        <label>Seconds</label>
+    </div>
+</section>
 
-      <div style="margin-top:12px;color:rgba(255,255,255,0.8);font-size:13px">
-        Made with <span style="color:#ff6b88">❤️</span> for my munchkin — the girl who lives in my mind, my heart, and my browser tabs.
-      </div>
+<section class="story-card">
+    <h2>My Letter To You</h2>
+    <p>
+        Fadi, my munchkin…  
+        I don’t know if you’ll ever read this, but I built this because I miss you deeply.  
+        December 8th, 2025 at 2:55 PM that was the last moment I saw you, and my heart has counted every second since.
+    </p>
 
-      <div style="margin-top:12px">
-        <a class="snap-btn" id="snapLink" href="#" target="_blank" rel="noopener">
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/ad/Snapchat_logo.svg" alt="snap">Message Me on Snapchat
-        </a>
-      </div>
-    </section>
+    <p>
+        You’re soft, shy, stubborn, cute, jealous, kind, mysterious, funny, emotional —  
+        and somehow all of that melts me every time.  
+    </p>
 
-    <!-- RIGHT -->
-    <aside class="panel letter">
-      <h2>My Letter To You</h2>
-      <div class="card-text">
-        <p>Fadi, my munchkin…</p>
-        <p>I don’t know if you’ll ever read this, but I built this because I miss you deeply. December 8th, 2025 at 2:55 AM — that was the last moment I saw you, and my heart has counted every second since.</p>
+    <p>
+        I miss your “yeh yeh yeh.”  
+        I miss your little jealous reactions.  
+        I miss your voice — my comfort.  
+        I miss calling you my munchkin and seeing you pretend you don’t like it.
+    </p>
 
-        <p>You’re soft, shy, stubborn, cute, jealous, kind, mysterious, funny, emotional — and somehow all of that melts me every time.</p>
+    <p>
+        I love you, always —  
+        A.
+    </p>
+</section>
 
-        <p>I miss the way you speak to me in that soft, playful voice. I miss the little ways you show you care even when you act like you don't. I miss your presence more than I can say — your comfort, your laugh, the way "my munchkin" makes you glow.</p>
+<section class="photos">
+    <h2>Our Photos</h2>
+    <div class="photo-container" id="photoContainer">
+        <!-- Add images by replacing below -->
+        <img src="/images/0E92B8A5-5E86-480E-AC83-448DB5659E67.JPG" alt="photo">
+        <img src="/images/1EE6EF79-78D1-4F4B-8D8A-36A196FA56A2.JPG" alt="photo">
+        <img src="/images/IMG_0757.jpg" alt="photo">
+        <img src="/images/IMG_0785.JPG" alt="">
+        <img src="/images/IMG_1081.JPG" alt="">
+        <img src="/images/IMG_1719.PNG" alt="">
+        <img src="/images/IMG_2684.JPG" alt="">
+        <img src="/images/IMG_2033.PNG" alt="">
+        <img src="/images/IMG_6920.JPG" alt="">
+        <img src="/images/IMG_7852.JPG" alt="">
+        <img src="/images/IMG_8569.JPG" alt="">
+    </div>
+</section>
 
-        <p>I love you, always,</p>
-        <p><strong>Amin.</strong> <span class="spark">✨</span></p>
-      </div>
-    </aside>
-  </main>
-
-  <footer style="text-align:center;margin-top:18px;color:rgba(255,255,255,0.75);">
-    <small>— Built with love • <span id="simple-note">Always thinking of you</span></small>
-  </footer>
-
-  <script>
-    // ========== CONFIG ==========
-    // last seen: 8 December 2025 at 02:55 (local time)
-    const lastSeen = new Date(2025, 11, 8, 2, 55, 0); // month is 11 (December)
-
-    const elDays = document.getElementById('days');
-    const elHours = document.getElementById('hours');
-    const elMinutes = document.getElementById('minutes');
-    const elSeconds = document.getElementById('seconds');
-
-    function pad(n){ return String(n).padStart(2,'0'); }
-
-    function updateTimer(){
-      const now = new Date();
-      let diff = Math.floor((now - lastSeen) / 1000);
-      if (diff < 0) diff = 0;
-      const days = Math.floor(diff / 86400);
-      diff %= 86400;
-      const hours = Math.floor(diff / 3600);
-      diff %= 3600;
-      const minutes = Math.floor(diff / 60);
-      const seconds = diff % 60;
-
-      elDays.textContent = days.toLocaleString();
-      elHours.textContent = pad(hours);
-      elMinutes.textContent = pad(minutes);
-      elSeconds.textContent = pad(seconds);
-    }
-
-    // run immediately and then every 1s
-    updateTimer();
-    setInterval(updateTimer, 1000);
-
-    // Snap link: replace YOUR_USERNAME with your Snapchat username
-    const snapUsername = 'YOUR_USERNAME'; // <<-- change this
-    const snapLink = document.getElementById('snapLink');
-    if (snapUsername && snapUsername !== 'YOUR_USERNAME'){
-      snapLink.href = 'https://www.snapchat.com/add/' + encodeURIComponent(snapUsername);
-    } else {
-      // if not set, open snapchat profile search as fallback
-      snapLink.href = 'https://www.snapchat.com/';
-    }
-
-    // small safety: if script errors, show console hint
-    window.addEventListener('error', (e) => {
-      console.error('Page error:', e.message, e.filename, e.lineno);
-    });
-  </script>
-
+<script src="script.js"></script>
 </body>
 </html>
+<footer class="love-footer">
+    Made with ❤️ for my munchkin the girl who lives in my mind, my heart, and my browser tabs.
+    <br><br>
+    <a href="https://www.snapchat.com/add/aamin8901" class="snap-purple" target="_blank">
+    💬 Message Me on Snapchat
+</a>
+
+</footer>
